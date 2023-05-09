@@ -27,8 +27,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import com.example.android.dagger.MyApplication
 import com.example.android.dagger.R
-import com.example.android.dagger.main.MainActivity
 import com.example.android.dagger.registration.RegistrationActivity
+import com.example.android.dagger.splash.SplashActivity
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginState.observe(this, Observer<LoginViewState> { state ->
             when (state) {
                 is LoginSuccess -> {
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, SplashActivity::class.java))
                     finish()
                 }
                 is LoginError -> errorTextView.visibility = View.VISIBLE

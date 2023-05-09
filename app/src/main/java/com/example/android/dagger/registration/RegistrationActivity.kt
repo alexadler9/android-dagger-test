@@ -21,9 +21,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.dagger.MyApplication
 import com.example.android.dagger.R
-import com.example.android.dagger.main.MainActivity
 import com.example.android.dagger.registration.enterdetails.EnterDetailsFragment
 import com.example.android.dagger.registration.termsandconditions.TermsAndConditionsFragment
+import com.example.android.dagger.splash.SplashActivity
 import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
@@ -64,7 +64,7 @@ class RegistrationActivity : AppCompatActivity() {
      */
     fun onTermsAndConditionsAccepted() {
         registrationViewModel.registerUser()
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, SplashActivity::class.java))
         finish()
     }
 
